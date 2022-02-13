@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: LeoMoreno <lmoreno@student.42quebec.>      +#+  +:+       +#+        */
+/*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/01 19:29:47 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/10/14 18:41:52 by LeoMoreno        ###   ########.fr       */
+/*   Updated: 2022/02/13 15:17:39 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 				cont_2++;
 				cont_3++;
 			}
-		}	
+		}
 		if (needle[cont_2] == '\0')
 			return ((char *)&haystack[cont_1]);
 		cont_1++;

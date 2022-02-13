@@ -26,9 +26,9 @@ WHITE = \033[0;97m
 
 #sources
 
-SRC_FILES	=	pipex.c start.c startChilds.c
+SRC_FILES	=	pipex.c start.c startChilds.c parserPath.c
 
-	
+
 SRC 		= 	$(addprefix $(SRC_DIR), $(SRC_FILES))
 
 
@@ -40,7 +40,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJ)
 			@echo "$(GRAY)     - Making libft... $(DEF_COLOR)"
-			@make -C $(LIBFT_DIR)	
+			@make -C $(LIBFT_DIR)
 			$(CC) $(OBJ) $(LIBFT) -o $(NAME) $(MLX)
 			@echo "$(GREEN)pipex compiled!$(DEF_COLOR)"
 

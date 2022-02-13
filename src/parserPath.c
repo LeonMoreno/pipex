@@ -1,28 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.c                                            :+:      :+:    :+:   */
+/*   parserPath.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/13 09:37:27 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/13 16:19:50 by lmoreno          ###   ########.fr       */
+/*   Created: 2022/02/13 16:07:36 by lmoreno           #+#    #+#             */
+/*   Updated: 2022/02/13 16:16:25 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-int	main(int argc, char **argv, char **env)
+char	*parser_path(char **env)
 {
+	char	*line;
+	char	**arg_split;
+	int		i;
+	int		acc;
 	char	*path;
 
-	path = parser_path(env);
-	if (argc > 1)
+	i = 1;
+	line = NULL;
+	while (env[i] && line == NULL)
 	{
-		printf("argc = %d\n", argc);
-		start(argv, path);
+		line = ft_strnstr(env[i], "PATH", 4);
+		i++;
 	}
-	else
-		ft_printf("Error\n");
-	return (0);
+	arg_split = ft_split(line, ':');
+	i = 0;
+	acc = -1;
+	while (acc == -1)
+	{
+		path = ft_strjoin(arg_split[i], "/ls");
+		acc = access(path, F_OK);
+		i++;
+	}
+	path = ft_strjoin(arg_split[i - 1], "/");
+	return (path);
 }

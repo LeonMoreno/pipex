@@ -6,13 +6,13 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 09:58:51 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/13 12:22:57 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/13 16:15:34 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "pipex.h"
 
-void	startchild1(char **argv, int end[2], int fdin)
+void	startchild1(char **argv, int end[2], int fdin, char *path)
 {
 	char	**cmd1;
 	char	*path_cmd1;
@@ -23,7 +23,7 @@ void	startchild1(char **argv, int end[2], int fdin)
 	argv_cmd1[0] = cmd1[0];
 	argv_cmd1[1] = cmd1[1];
 	argv_cmd1[2] = NULL;
-	path_cmd1 = ft_strjoin(PATH, cmd1[0]);
+	path_cmd1 = ft_strjoin(path, cmd1[0]);
 	acc = access(path_cmd1, F_OK);
 	if (acc < 0)
 	{
@@ -37,7 +37,7 @@ void	startchild1(char **argv, int end[2], int fdin)
 	execve(path_cmd1, argv_cmd1, NULL);
 }
 
-void	startchild2(char **argv, int end[2], int *fdout)
+void	startchild2(char **argv, int end[2], int *fdout, char *path)
 {
 	char	**cmd2;
 	char	*argv_cmd2[3];
@@ -51,7 +51,7 @@ void	startchild2(char **argv, int end[2], int *fdout)
 	argv_cmd2[0] = cmd2[0];
 	argv_cmd2[1] = cmd2[1];
 	argv_cmd2[2] = NULL;
-	path_cmd2 = ft_strjoin(PATH, cmd2[0]);
+	path_cmd2 = ft_strjoin(path, cmd2[0]);
 	acc = access(path_cmd2, F_OK);
 	if (acc < 0)
 	{
