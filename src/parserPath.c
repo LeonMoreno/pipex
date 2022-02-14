@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:07:36 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/13 16:16:25 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/13 16:23:51 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*parser_path(char **env)
 	char	*path;
 
 	i = 1;
+	acc = -1;
 	line = NULL;
 	while (env[i] && line == NULL)
 	{
@@ -29,7 +30,6 @@ char	*parser_path(char **env)
 	}
 	arg_split = ft_split(line, ':');
 	i = 0;
-	acc = -1;
 	while (acc == -1)
 	{
 		path = ft_strjoin(arg_split[i], "/ls");
