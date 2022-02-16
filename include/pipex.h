@@ -15,9 +15,9 @@ void startchild1(char **argv, int end[2], int fdin, char **env);
 
 
 
-void startchild2(int argc, char **argv, int end[2], int *fdout, char **env);
+void startchild2(int argc, char **argv, int end[2], int *fdout, char **env, int multi_end[2]);
 
-void startchild_n(int argc, char **argv, int end[2], char **env, int);
+void startchild_n(int argc, char **argv, int end[2], char **env, int multi_end[2]);
 
 
 void startfork(int argc, char **argv, int fdin, char **env);
