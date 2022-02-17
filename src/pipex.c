@@ -12,11 +12,17 @@
 
 #include "pipex.h"
 
-int	main(int argc, char **argv, char **env)
+int	main(int argc, char **argv, char **envp)
 {
-	if (argc > 5)
+	t_pipex pipex;
+
+	pipex.arg = &argc;
+	pipex.agv = argv;
+	pipex.env = envp;
+
+	if (argc == 5)
 	{
-		start(argc, argv, env);
+		start(&pipex);
 	}
 	else
 		ft_printf("Error faltan Argumentos\n");

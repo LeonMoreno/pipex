@@ -12,7 +12,7 @@
 
 #include "pipex.h"
 
-char	*parser_path(char *argu, char **env)
+char	*parser_path(char *argu, t_pipex *pipex)
 {
 	char	*line;
 	char	**arg_split;
@@ -20,9 +20,9 @@ char	*parser_path(char *argu, char **env)
 
 	i = 1;
 	line = NULL;
-	while (env[i] && line == NULL)
+	while (pipex->env[i] && line == NULL)
 	{
-		line = ft_strnstr(env[i], "PATH", 4);
+		line = ft_strnstr(pipex->env[i], "PATH", 4);
 		i++;
 	}
 	arg_split = ft_split(line, ':');
@@ -30,7 +30,7 @@ char	*parser_path(char *argu, char **env)
 }
 
 char	*parser_cmd(char *argu, char **arg_split)
-{	
+{
 	int		i;
 	int		acc;
 	char	*path;
