@@ -40,7 +40,7 @@ void	startfork(int argc, char **argv, int fdin, char **env)
 		startchild1(argv, end, fdin, env);
 	else if (child[0] > 0)
 	{
-		close(end[WRITE_END]);
+		close(end[IN]);
 		child[1] = fork();
 		if (child[1] == 0)
 			startchild2(argc, argv, end, &fdout, env);

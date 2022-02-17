@@ -7,16 +7,17 @@
 #include <sys/wait.h>
 #include <errno.h>
 
-#define READ_END 0 /*index pipe extremo lectura */
-#define WRITE_END 1 /*index pipe extremo escritura */
+#define OUT 0 /*index pipe extremo lectura */
+#define IN 1 /*index pipe extremo escritura */
 
 void start(int argc, char **argv, char **env);
 void startchild1(char **argv, int end[2], int fdin, char **env);
 
 
 
-void startchild2(int argc, char **argv, int end[2], int *fdout, char **env, int multi_end[2]);
+void startchild2(int argc, char **argv, int *fdout, char **env, int multi_end[2]);
 
+void startchild_n_2(int argc, char **argv, int end[2], char **env, int multi_end[2]);
 void startchild_n(int argc, char **argv, int end[2], char **env, int multi_end[2]);
 
 
