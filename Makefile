@@ -26,7 +26,7 @@ WHITE = \033[0;97m
 
 #sources
 
-SRC_FILES	=	pipex.c start.c startChilds.c parserPath.c
+SRC_FILES	=	pipex.c start.c startChilds.c parserPath.c utils_pipex.c
 
 
 SRC 		= 	$(addprefix $(SRC_DIR), $(SRC_FILES))
