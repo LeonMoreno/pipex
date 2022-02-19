@@ -25,15 +25,9 @@ CYAN = \033[0;96m
 WHITE = \033[0;97m
 
 #sources
-
 SRC_FILES	=	pipex.c start.c startChilds.c parserPath.c utils_pipex.c
-
-
 SRC 		= 	$(addprefix $(SRC_DIR), $(SRC_FILES))
-
-
 OBJ 		= 	$(SRC:.c=.o)
-
 
 ###
 all:		$(NAME)

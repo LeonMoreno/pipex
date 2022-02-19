@@ -48,12 +48,16 @@ FTPRINT_DIR	= 	ft_printf/
 FTPRINT		= 	ft_printf ft_printf_chars ft_printf_nums ft_printf_hexa \
 			   	ft_printf_bits
 
+FTGNL_DIR	=	ft_gnl/
+FTGNL		= 	get_next_line get_next_line_utils
+
 SRC_FILES+=$(addprefix $(FTIS_DIR),$(FTIS))
 SRC_FILES+=$(addprefix $(FTMEM_DIR),$(FTMEM))
 SRC_FILES+=$(addprefix $(FTPUT_DIR),$(FTPUT))
 SRC_FILES+=$(addprefix $(FTTO_DIR),$(FTTO))
 SRC_FILES+=$(addprefix $(FTSTR_DIR),$(FTSTR))
 SRC_FILES+=$(addprefix $(FTPRINT_DIR),$(FTPRINT))
+SRC_FILES+=$(addprefix $(FTGNL_DIR), $(FTGNL))
 
 BONUS_FILES+=$(addprefix $(FTLST_DIR),$(FTLST))
 
@@ -85,6 +89,7 @@ $(OBJF):
 			@mkdir -p $(OBJ_DIR)$(FTSTR_DIR)
 			@mkdir -p $(OBJ_DIR)$(FTLST_DIR)
 			@mkdir -p $(OBJ_DIR)$(FTPRINT_DIR)
+			@mkdir -p $(OBJ_DIR)$(FTGNL_DIR)
 
 bonus:		$(BONUS_OBJ)
 			@$(AR) $(NAME) $(BONUS_OBJ)

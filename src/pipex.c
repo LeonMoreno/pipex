@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 09:37:27 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/18 19:03:33 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/19 08:55:08 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ int	main(int argc, char **argv, char **envp)
 	pipex.arg = &argc;
 	pipex.agv = argv;
 	pipex.env = envp;
+
+
 	if (argc >= 5)
 	{
 		start(&pipex);

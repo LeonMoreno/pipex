@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: LeoMoreno <lmoreno@student.42quebec.com>   +#+  +:+       +#+        */
+/*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 13:12:44 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/12/16 19:31:08 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/19 08:14:54 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@
 # include <unistd.h>
 # include <limits.h>
 # include <stdarg.h>
+# include <fcntl.h>
+
+# ifndef BUFFER_SIZE
+# define BUFFER_SIZE 10
+# endif
 
 typedef struct s_list {
 	void			*content;
@@ -89,10 +94,19 @@ void	ft_checkarg(char c, va_list argva, int *len);
 void	ft_putchar(char c, int *len);
 void	ft_putstr(char *s, int *len);
 void	ft_putnbr(int nb, int *len);
+
 //int     ft_strlen(char *str);
 void	ft_puthexa_mayus(unsigned int nb, int *len);
 void	ft_puthexa_minus(unsigned int nb, int *len);
 void	ft_put_ptr(unsigned long long nb, int *len);
 void	ft_put_unsigned(unsigned int nb, int *len);
 void	ft_printf_bits(int nb, int *len);
+
+/* Funciones getNextLine */
+char	*get_next_line(int fd);
+char	*ft_read_buff(int fd, char *save_buff);
+char	*ft_strjoin_gnl(char *save_buff, char *buff);
+char	*ft_get_line(char *s);
+char	*ft_next_save(char *save_buff);
+
 #endif
