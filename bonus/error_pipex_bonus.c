@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   free_pipex.c                                       :+:      :+:    :+:   */
+/*   error_pipex_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/20 10:02:52 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/20 10:04:31 by lmoreno          ###   ########.fr       */
+/*   Created: 2022/02/22 07:57:06 by lmoreno           #+#    #+#             */
+/*   Updated: 2022/02/22 14:24:49 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "pipex.h"
+#include "pipex_bonus.h"
 
-void	ft_free(char *ptr1, char *ptr2)
+int	msg(char *erro)
 {
-	free(ptr1);
-	free(ptr2);
+	write(2, erro, ft_strlen(erro));
+	return (1);
 }
 
-void	ft_free_2(char **doble, char *ptr2)
+void	msg_err(char *erro)
 {
-	free(doble);
-	free(ptr2);
+	perror(erro);
+	exit(1);
+}
+
+void	msg_cmd(char *erro)
+{
+	write(2, erro, ft_strlen(erro));
+	exit(1);
 }

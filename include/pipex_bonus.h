@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   pipex.h                                            :+:      :+:    :+:   */
+/*   pipex_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 21:34:36 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/22 15:51:39 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/22 15:51:27 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PIPEX_H
-# define PIPEX_H
+#ifndef PIPEX_BONUS_H
+# define PIPEX_BONUS_H
 
 # include "../libft/include/libft.h"
 # include <fcntl.h>
@@ -22,20 +22,25 @@
 /* strerror */
 # include <string.h>
 
-# define ERR_INPUT "Invalid number or Arguments.\n"
-# define ERR_INFILE "Invalid in-File"
-# define ERR_OUTFILE "Invalid out-File"
-# define ERR_CMD "Command not found\n"
+# define ERR_INPUT	"Invalid number or Arguments.\n"
+# define ERR_INFILE	"Invalid in-File"
+# define ERR_OUTFILE	"Invalid out-File"
+# define ERR_CMD		"Command not found\n"
 
 # define OUT 0 /*index pipe extremo lectura */
 # define IN 1 /*index pipe extremo escritura */
 typedef struct s_pipex {
 	int		pip1[2];
+	int		pipn[10][2];
+	int		last_pipe;
 	int		arg;
 	char	**agv;
 	char	**env;
+	char	*argv_1;
+	int		n;
 	int		fdin;
 	int		fdout;
+	int		here_doc;
 }	t_pipex;
 void	start(t_pipex *pipex);
 void	startchild1(t_pipex *pipex);

@@ -3,9 +3,10 @@
 NAME 		= pipex
 INCLUDES	= include/
 SRC_DIR		= src/
+BONUS_DIR	= bonus/
 CC 			= gcc
-CFLAGS		= -g -Wall -Wextra -Werror -I
-RM		= rm -f
+CFLAGS		= -Wall -Wextra -Werror -I
+RM			= rm -f
 
 #Libft
 LIBFT_A		= libft.a
@@ -24,10 +25,15 @@ MAGENTA = \033[0;95m
 CYAN = \033[0;96m
 WHITE = \033[0;97m
 
-#sources
-SRC_FILES	=	pipex.c start.c startChilds.c parserPath.c utils_pipex.c free_pipex.c error_pipex.c
+#sources Mandatory
+SRC_FILES	=	pipex.c startChilds.c parserPath.c utils_pipex.c error_pipex.c
 SRC 		= 	$(addprefix $(SRC_DIR), $(SRC_FILES))
 OBJ 		= 	$(SRC:.c=.o)
+
+#Bonus Sources
+SRC_BONUS_FILES = pipex_bonus.c start_bonus.c startChilds_bonus.c parserPath_bonus.c utils_pipex_bonus.c error_pipex_bonus.c
+SRC_BONUS		= $(addprefix $(BONUS_DIR), $(SRC_BONUS_FILES))
+OBJ_BONUS		= $(SRC_BONUS:.c=.o)
 
 ###
 all:		$(NAME)
@@ -35,12 +41,18 @@ all:		$(NAME)
 $(NAME):	$(OBJ)
 			@echo "$(GRAY)     - Making libft... $(DEF_COLOR)"
 			@make -C $(LIBFT_DIR)
-			$(CC) $(OBJ) $(LIBFT) -o $(NAME) $(MLX)
+			$(CC) $(OBJ) $(LIBFT) -o $(NAME)
 			@echo "$(GREEN)pipex compiled!$(DEF_COLOR)"
 
 .c.o :
 			@echo "$(YELLOW)Compiling: $< $(DEF_COLOR)"
 			$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $(<:.c=.o)
+
+bonus	:	$(OBJ_BONUS)
+			@echo "$(GRAY)     - Making libft... $(DEF_COLOR)"
+			@make -C $(LIBFT_DIR)
+			$(CC) $(OBJ_BONUS) $(LIBFT) -o $(NAME)
+			@echo "$(GREEN)pipex Bonus compiled!$(DEF_COLOR)"
 
 clean:
 			@$(RM) -rf $(OBJ) $(OBJ_BONUS)
