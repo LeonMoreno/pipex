@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 09:37:27 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/22 15:48:49 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/22 16:05:31 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static int	arg_infile(char *argu, t_pipex *pipex)
 
 static	void	ft_here_doc(t_pipex *pipex)
 {
-	char	*line[10];
+	char	*line[30];
 	int		file;
 	int		i;
 

@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 08:18:56 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/22 15:05:53 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/22 16:02:22 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ void	startchild_n(int i, t_pipex *pipex)
 void	startchild_last(t_pipex *pipex)
 {
 	char	**cmd2;
-	char	*argv_cmd2[3];
+	char	*argv_cmd2[4];
 	char	*path_cmd;
 
 	cmd2 = ft_split(pipex->agv[pipex->arg -2], ' ');
