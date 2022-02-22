@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 21:23:22 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/18 21:31:00 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/22 08:09:14 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,18 +53,4 @@ void	sort_child_n(int i)
 		waitpid(0, &status, 0);
 		i--;
 	}
-}
-
-void	open_files(t_pipex *pipex)
-{
-	pipex->fdin = open(pipex->agv[1], O_RDONLY, 0644);
-	if (pipex->fdin == -1)
-	{
-		perror("Error");
-		exit(-1);
-	}
-	pipex->fdout = open(pipex->agv[*pipex->arg -1] \
-		, O_WRONLY | O_CREAT | O_TRUNC, 0644);
-	if (pipex->fdout == -1)
-		perror("Error");
 }

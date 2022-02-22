@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   error_pipex.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/01 14:20:56 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2022/02/21 17:12:00 by lmoreno          ###   ########.fr       */
+/*   Created: 2022/02/22 07:57:06 by lmoreno           #+#    #+#             */
+/*   Updated: 2022/02/22 07:57:15 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "pipex.h"
 
-int	ft_strncmp(const char *s1, const char *s2, size_t n)
+int	msg(char *erro)
 {
-	while ((*s1 || *s2) && (n > 0))
-	{
-		if (*s1 != *s2)
-			return ((unsigned char)*s1 - (unsigned char)*s2);
-		s1++;
-		s2++;
-		n--;
-	}
-	return (0);
+	write(2, erro, ft_strlen(erro));
+	return (1);
+}
+
+void	msg_err(char *erro)
+{
+	perror(erro);
+	exit(1);
+}
+
+void	msg_cmd(char *erro)
+{
+	write(2, erro, ft_strlen(erro));
+	exit(1);
 }

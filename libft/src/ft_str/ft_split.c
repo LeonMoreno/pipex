@@ -3,15 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: LeoMoreno <lmoreno@student.42quebec.com    +#+  +:+       +#+        */
+/*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:08:24 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/11/04 18:01:50 by LeoMoreno        ###   ########.fr       */
+/*   Updated: 2022/02/19 19:42:12 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+//#include "libft.h"
 #include <stdlib.h>
+#include <stdio.h>
 #define IN 1
 #define OUT 0
 
@@ -86,3 +87,24 @@ char	**ft_split(char const *s, char c)
 	res[i] = NULL;
 	return (res);
 }
+
+/*int main(void)
+{
+    char *str = "Dios te bendiga";
+    char **res;
+    char * ptr;
+    int i;
+
+    i = 0;
+    res = ft_split(str, ' ');
+    ptr = res[2];
+    while(res[i])
+    {
+        printf("res[%d] = %s\n", i, res[i]);
+       free(res[i]);
+        i++;
+    }
+   free(res);
+
+    return 0;
+}*/

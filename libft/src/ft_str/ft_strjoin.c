@@ -39,3 +39,4 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr[cont] = '\0';
 	return (ptr);
 }
+
