@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 16:32:02 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2022/02/19 08:14:09 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/22 16:19:31 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ char	*ft_read_buff(int fd, char *save_buff)
 	if (!buff)
 		return (NULL);
 	rd_byt = 1;
-
 	while (!ft_strchr(save_buff, '\n') && rd_byt != 0)
 	{
 		rd_byt = read(fd, buff, BUFFER_SIZE);

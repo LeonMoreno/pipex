@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strjoin.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: LeoMoreno <lmoreno@student.42quebec.>      +#+  +:+       +#+        */
+/*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 14:04:59 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/10/19 17:54:13 by LeoMoreno        ###   ########.fr       */
+/*   Updated: 2022/02/22 16:19:04 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,4 +39,3 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	ptr[cont] = '\0';
 	return (ptr);
 }
-

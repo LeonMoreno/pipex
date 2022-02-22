@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/06 13:12:44 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2022/02/19 08:14:54 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/22 16:23:35 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 # include <fcntl.h>
 
 # ifndef BUFFER_SIZE
-# define BUFFER_SIZE 10
+#  define BUFFER_SIZE 10
 # endif
 
 typedef struct s_list {

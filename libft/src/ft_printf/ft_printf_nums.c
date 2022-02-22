@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf_nums.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: LeoMoreno <lmoreno@student.42quebec.>      +#+  +:+       +#+        */
+/*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/09 13:48:13 by LeoMoreno         #+#    #+#             */
-/*   Updated: 2021/11/10 12:51:03 by LeoMoreno        ###   ########.fr       */
+/*   Updated: 2022/02/22 16:18:25 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,11 +42,6 @@ void	ft_put_unsigned(unsigned int nb, int *len)
 	int	modu;
 
 	modu = 0;
-	/*if (nb < 0)
-	{
-		ft_putchar('-', len);
-		nb *= -1;
-	}*/
 	if (nb < 10)
 		ft_putchar(nb + 48, len);
 	if (nb >= 10)
