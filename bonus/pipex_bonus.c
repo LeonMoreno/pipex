@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 09:37:27 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/25 17:13:47 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/25 17:33:27 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static	void	ft_here_doc(t_pipex *pipex)
 		msg_err(ERR_INFILE);
 	i = 0;
 	line[0] = get_next_line(0);
-
 	while (ft_strncmp(line[i], pipex->agv[2], ft_strlen(pipex->agv[2])))
 	{
 		if (ft_strncmp(line[i], pipex->agv[2], ft_strlen(pipex->agv[2])))
