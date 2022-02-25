@@ -110,4 +110,7 @@ re:			fclean all
 norm:
 			@norminette $(SRC) $(INCLUDES) | grep -v Norme -B1 || true
 
+hola:			
+			@echo $(OBJ)
+
 .PHONY:		all clean fclean re norm

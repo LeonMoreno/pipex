@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 21:34:36 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/22 15:51:27 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/25 17:12:58 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 # define ERR_INFILE	"Invalid in-File"
 # define ERR_OUTFILE	"Invalid out-File"
 # define ERR_CMD		"Command not found\n"
+# define HD		"here_doc> "
 
 # define OUT 0 /*index pipe extremo lectura */
 # define IN 1 /*index pipe extremo escritura */

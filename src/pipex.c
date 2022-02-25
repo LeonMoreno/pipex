@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 09:37:27 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/22 15:49:09 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/25 16:39:56 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	main(int argc, char **argv, char **envp)
 	pipex.arg = argc;
 	pipex.agv = argv;
 	pipex.env = envp;
-	if (argc < 5)
+	if (argc != 5)
 		return (msg(ERR_INPUT));
 	open_files(&pipex);
 	start(&pipex);
