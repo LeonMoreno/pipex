@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 09:37:27 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/25 17:33:27 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/28 18:42:48 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,15 +27,11 @@ static int	arg_infile(char *argu, t_pipex *pipex)
 	}
 }
 
-static	void	ft_here_doc(t_pipex *pipex)
+void	ft_here_doc(t_pipex *pipex)
 {
 	char	*line[30];
-	int		file;
 	int		i;
 
-	file = open(".here_doc", O_CREAT | O_WRONLY | O_TRUNC, 0000644);
-	if (pipex->fdin < 0)
-		msg_err(ERR_INFILE);
 	i = 0;
 	line[0] = get_next_line(0);
 	while (ft_strncmp(line[i], pipex->agv[2], ft_strlen(pipex->agv[2])))
@@ -43,17 +39,14 @@ static	void	ft_here_doc(t_pipex *pipex)
 		if (ft_strncmp(line[i], pipex->agv[2], ft_strlen(pipex->agv[2])))
 		{
 			write(1, HD, 10);
-			write (file, line[i], ft_strlen(line[i]));
+			write (pipex->expe[IN], line[i], ft_strlen(line[i]));
 		}
 		free (line[i]);
 		i++;
 		line[i] = get_next_line(0);
 	}
 	free(line[i]);
-	close(file);
-	pipex->fdin = open(".here_doc", O_RDONLY);
-	if (pipex->fdin < 0)
-		msg_err(ERR_INFILE);
+	close(pipex->expe[IN]);
 }
 
 static	void	open_files(t_pipex *pipex)
@@ -70,6 +63,7 @@ static	void	open_files(t_pipex *pipex)
 	}
 	else if (pipex->here_doc == 1)
 	{
+		pipe(pipex->expe);
 		ft_here_doc(pipex);
 		pipex->fdout = open(pipex->agv[pipex->arg -1], \
 			O_CREAT | O_RDWR | O_APPEND, 0000644);

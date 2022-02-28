@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 21:23:22 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/22 14:54:04 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/28 18:14:46 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ void	close_pipe_father(int i, t_pipex *pipex)
 	if (i >= 0)
 	{
 		close(pipex->pip1[OUT]);
+		close(pipex->expe[OUT]);
 		close(pipex->pipn[pipex->last_pipe][IN]);
 		while (i > 0)
 		{

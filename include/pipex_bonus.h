@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/18 21:34:36 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/25 17:12:58 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/28 18:04:48 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@
 # define IN 1 /*index pipe extremo escritura */
 typedef struct s_pipex {
 	int		pip1[2];
+	int		expe[2];
 	int		pipn[10][2];
 	int		last_pipe;
 	int		arg;
@@ -59,6 +60,7 @@ void	close_pipe_child_n(int i, t_pipex *pipex);
 void	sort_child_n(int i);
 void	ft_free(char *ptr1, char *ptr2);
 void	ft_free_2(char **doble, char *ptr2);
+void	ft_here_doc(t_pipex *pipex);
 
 /* Error MSG */
 int		msg(char *erro);

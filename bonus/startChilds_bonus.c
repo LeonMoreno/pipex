@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/20 08:18:56 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/22 16:02:22 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/28 18:12:21 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ void	startchild1(t_pipex *pipex)
 	argv_cmd1[1] = cmd1[1];
 	argv_cmd1[2] = cmd1[2];
 	argv_cmd1[3] = NULL;
-	dup2(pipex->fdin, STDIN_FILENO);
+	if (pipex->here_doc == 0)
+		dup2(pipex->fdin, STDIN_FILENO);
+	else
+	{
+		dup2(pipex->expe[OUT], STDIN_FILENO);
+		close(pipex->expe[OUT]);
+	}
 	dup2(pipex->pip1[IN], STDOUT_FILENO);
 	close(pipex->pip1[IN]);
 	execve(path_cmd, argv_cmd1, NULL);
