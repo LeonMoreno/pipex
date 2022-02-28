@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 16:07:36 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/22 07:42:37 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/28 15:43:41 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*parser_path(char *argu, t_pipex *pipex)
 {
 	char	**arg_split;
 
-	while (ft_strncmp(*pipex->env, "PATH", 4))
+	while (ft_strncmp(*pipex->env, "PATH=", 5))
 		pipex->env++;
 	arg_split = ft_split((*pipex->env + 5), ':');
 	return (parser_cmd(argu, arg_split));

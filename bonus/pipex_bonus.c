@@ -6,7 +6,7 @@
 /*   By: lmoreno <leon.moreno@pm.me>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/13 09:37:27 by lmoreno           #+#    #+#             */
-/*   Updated: 2022/02/25 17:13:47 by lmoreno          ###   ########.fr       */
+/*   Updated: 2022/02/28 15:58:26 by lmoreno          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int	arg_infile(char *argu, t_pipex *pipex)
 {
-	if (argu && !ft_strncmp("here_doc", argu, 8))
+	if (argu && !ft_strncmp("here_doc", argu, 9))
 	{
 		pipex->here_doc = 1;
 		write(1, HD, 10);
